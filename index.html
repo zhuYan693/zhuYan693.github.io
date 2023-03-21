@@ -29,9 +29,9 @@
 </head>
 <body>
 <label>
-  <input type="date" placeholder="请输入日期" value="" style="height: 50px;font-size: 30px;width: 90%">
+  <input type="date" placeholder="请输入日期" value=" " style="height: 50px;font-size: 30px;width: 90%">
 </label>
-<button class="search" onclick="handleSearch()">查 询</button>
+<button class="search" onclick="handleSearch()">查询</button>
 </body>
 <script>
   const input = document.getElementsByTagName('input')[0]
@@ -39,6 +39,7 @@
   function handleSearch() {
     if (!input.value) {
       alert('选择日期')
+      return
     }
     var newDate = DateAdd("d ", 285, new Date(input.value));
     alert('预产期: ' + newDate.toLocaleDateString())
