@@ -13,10 +13,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum=1.0,user-scalable=no">
   <meta name="format-detection" content="telephone=no, email=no">
   <title>Title</title>
+  <style>
+      .search {
+          display: block;
+          width: 50%;
+          font-size: 30px;
+          text-align: center;
+          margin: 30px auto 0;
+          background: #409eff;
+          color: #fff;
+          border-color: #fff;
+          border-style: none;
+      }
+  </style>
 </head>
 <body>
-<input type="text" placeholder="请输入日期">
-<button onclick="handleSearch()">查询111</button>
+<label>
+  <input type="text" placeholder="请输入日期" style="height: 50px;font-size: 30px">
+</label>
+<button class="search" onclick="handleSearch()">查询</button>
 </body>
 <script>
   const input = document.getElementsByTagName('input')[0]
@@ -26,7 +41,7 @@
 
   function handleSearch() {
     var newDate = DateAdd("d ", 285, new Date(input.value));
-    alert(newDate.toLocaleDateString())
+    alert('预产期: ' + newDate.toLocaleDateString())
   }
 
   function DateAdd(interval, number, date) {
