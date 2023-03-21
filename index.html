@@ -25,11 +25,18 @@
           border-color: #fff;
           border-style: none;
       }
+
+      .input {
+          height: 50px;
+          font-size: 30px;
+          width: 90%;
+          background: transparent;
+      }
   </style>
 </head>
 <body>
 <label>
-  <input type="date" placeholder="请输入日期" value=" " style="height: 50px;font-size: 30px;width: 90%">
+  <input class="input" type="date" placeholder="请输入日期">
 </label>
 <button class="search" onclick="handleSearch()">查询</button>
 </body>
