@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+<input type="text" placeholder="请输入日期">
+<button onclick="handleSearch()">查询</button>
+</body>
+<script>
+  const a = {
+    1: 31,
+    2: 28,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31
+  }
+  const input = document.getElementsByTagName('input')[0]
+  window.onload = () => {
+    input.value = new Date().toLocaleDateString()
+  }
+
+  function handleSearch() {
+    var newDate = DateAdd("d ", 285, new Date(input.value));
+    alert(newDate.toLocaleDateString())
+  }
+
+  function DateAdd(interval, number, date) {
+    /*
+     *   功能:实现VBScript的DateAdd功能.
+     *   参数:interval,字符串表达式，表示要添加的时间间隔.
+     *   参数:number,数值表达式，表示要添加的时间间隔的个数.
+     *   参数:date,时间对象.
+     *   返回:新的时间对象.
+     *   var   now   =   new   Date();
+     *   var   newDate   =   DateAdd( "d ",5,now);
+     *---------------   DateAdd(interval,number,date)   -----------------
+     */
+    switch (interval) {
+      case "y ": {
+        date.setFullYear(date.getFullYear() + number);
+        return date;
+      }
+      case "q ": {
+        date.setMonth(date.getMonth() + number * 3);
+        return date;
+      }
+      case "m ": {
+        date.setMonth(date.getMonth() + number);
+        return date;
+      }
+      case "w ": {
+        date.setDate(date.getDate() + number * 7);
+        return date;
+      }
+      case "d ": {
+        date.setDate(date.getDate() + number);
+        return date;
+      }
+      case "h ": {
+        date.setHours(date.getHours() + number);
+        return date;
+      }
+      case "m ": {
+        date.setMinutes(date.getMinutes() + number);
+        return date;
+      }
+      case "s ": {
+        date.setSeconds(date.getSeconds() + number);
+        return date;
+      }
+      default: {
+        date.setDate(d.getDate() + number);
+        return date;
+      }
+    }
+  }
+</script>
+
+</html>
